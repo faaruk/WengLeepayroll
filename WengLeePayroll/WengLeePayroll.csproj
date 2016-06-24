@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31AB80D9-A1AE-49EC-9451-CF6073CEDBC0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WengLeePayroll</RootNamespace>
+    <AssemblyName>WengLeePayroll</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>478292_668dc7c1d6f84426864a7d66a1154ba3_9WZ_6.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="appcode\Common.cs" />
+    <Compile Include="appcode\PublicValues.cs" />
+    <Compile Include="appcode\VersionControl.cs" />
+    <Compile Include="ButtonLastest.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonLastest.Designer.cs">
+      <DependentUpon>ButtonLastest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertSalariedTemplateToTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertSalariedTemplateToTime.Designer.cs">
+      <DependentUpon>ConvertSalariedTemplateToTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageUser.Designer.cs">
+      <DependentUpon>ManageUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDesignation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDesignation.Designer.cs">
+      <DependentUpon>frmDesignation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDepartment.Designer.cs">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersonalLeave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonalLeave.Designer.cs">
+      <DependentUpon>frmPersonalLeave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompanyHolidays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompanyHolidays.Designer.cs">
+      <DependentUpon>frmCompanyHolidays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trans.Designer.cs">
+      <DependentUpon>Trans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters.Designer.cs">
+      <DependentUpon>Masters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMdi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMdi.Designer.cs">
+      <DependentUpon>MainMdi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageEmployee.Designer.cs">
+      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabelGradient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SalariedEmpTimeTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalariedEmpTimeTemplate.Designer.cs">
+      <DependentUpon>SalariedEmpTimeTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExecuteReportLongLunch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExecuteReportLongLunch.Designer.cs">
+      <DependentUpon>ExecuteReportLongLunch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExecuteReportDateRange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExecuteReportDateRange.Designer.cs">
+      <DependentUpon>ExecuteReportDateRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExecuteReportFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExecuteReportFile.Designer.cs">
+      <DependentUpon>ExecuteReportFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB_Base.cs" />
+    <Compile Include="ExecuteReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExecuteReport.Designer.cs">
+      <DependentUpon>ExecuteReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPayPeriod2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayPeriod2.Designer.cs">
+      <DependentUpon>frmPayPeriod2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LateReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LateReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadData.cs" />
+    <Compile Include="SalariedEmpTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalariedEmpTime.Designer.cs">
+      <DependentUpon>SalariedEmpTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaveData.cs" />
+    <Compile Include="TimeCardDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimeCardDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AttendanceCover.rdlc" />
+    <EmbeddedResource Include="AttendanceStatus.rdlc" />
+    <EmbeddedResource Include="ConvertSalariedTemplateToTime.resx">
+      <DependentUpon>ConvertSalariedTemplateToTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveReport.rdlc" />
+    <EmbeddedResource Include="ManageUser.resx">
+      <DependentUpon>ManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDesignation.resx">
+      <DependentUpon>frmDesignation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDepartment.resx">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersonalLeave.resx">
+      <DependentUpon>frmPersonalLeave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompanyHolidays.resx">
+      <DependentUpon>frmCompanyHolidays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trans.resx">
+      <DependentUpon>Trans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters.resx">
+      <DependentUpon>Masters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMdi.resx">
+      <DependentUpon>MainMdi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageEmployee.resx">
+      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalariedEmpTimeTemplate.resx">
+      <DependentUpon>SalariedEmpTimeTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExecuteReportLongLunch.resx">
+      <DependentUpon>ExecuteReportLongLunch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayPeriod2.resx">
+      <DependentUpon>frmPayPeriod2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LateReport.rdlc" />
+    <EmbeddedResource Include="LongLunchReport.rdlc" />
+    <EmbeddedResource Include="SalariedEmpTime.resx">
+      <DependentUpon>SalariedEmpTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummaryTimeCard.rdlc" />
+    <EmbeddedResource Include="ExecuteReportDateRange.resx">
+      <DependentUpon>ExecuteReportDateRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExecuteReportFile.resx">
+      <DependentUpon>ExecuteReportFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExecuteReport.resx">
+      <DependentUpon>ExecuteReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Summary.rdlc" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LateReport.xsc">
+      <DependentUpon>LateReport.xsd</DependentUpon>
+    </None>
+    <None Include="LateReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LateReport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LateReport.xss">
+      <DependentUpon>LateReport.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TimeCardDataSet.xsc">
+      <DependentUpon>TimeCardDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TimeCardDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TimeCardDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TimeCardDataSet.xss">
+      <DependentUpon>TimeCardDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="478292_668dc7c1d6f84426864a7d66a1154ba3_9WZ_6.ico" />
+    <Content Include="58bd82c2_b384_488f_b7cd_c2c978e0ecec_aH1_12.ico" />
+    <None Include="Resources\7167847_ml.jpg" />
+    <None Include="Resources\integrating-time-attendance-payroll.jpg" />
+    <None Include="Resources\58bd82c2-b384-488f-b7cd-c2c978e0ecec.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
