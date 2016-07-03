@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>POA</DataSourceReference>
+      <CommandText>SELECT DISTINCT OtherInfos, Truck, Driver, RouteId, ItemId, OrderId, OrderDate, CustomerName, Comments, '1a', '2a', '3a', '4a', '5a', '6a', '7a', '8a', '9a', '10a', '11a', '12a', 'OtherProduct'
+FROM            (SELECT        R.OtherInfos, R.Truck, R.Driver, R.RouteId, RO.ItemId, RO.OrderId, O.OrderDate, C.CustomerName, O.Comments, dbo.fn_GetQtyByOrderByProduct(O.OrderId, 1) AS '1a', 
+                                                    dbo.fn_GetQtyByOrderByProduct(O.OrderId, 2) AS '2a', dbo.fn_GetQtyByOrderByProduct(O.OrderId, 3) AS '3a', dbo.fn_GetQtyByOrderByProduct(O.OrderId, 4) AS '4a', 
+                                                    dbo.fn_GetQtyByOrderByProduct(O.OrderId, 5) AS '5a', dbo.fn_GetQtyByOrderByProduct(O.OrderId, 6) AS '6a', dbo.fn_GetQtyByOrderByProduct(O.OrderId, 7) AS '7a', 
+                                                    dbo.fn_GetQtyByOrderByProduct(O.OrderId, 8) AS '8a', dbo.fn_GetQtyByOrderByProduct(O.OrderId, 9) AS '9a', dbo.fn_GetQtyByOrderByProduct(O.OrderId, 10) AS '10a', 
+                                                    dbo.fn_GetQtyByOrderByProduct(O.OrderId, 11) AS '11a', dbo.fn_GetQtyByOrderByProduct(O.OrderId, 12) AS '12a', dbo.fn_GetQtyByOrderByOtherProduct(O.OrderId) AS 'OtherProduct'
+                          FROM            tblRoute AS R INNER JOIN
+                                                    tblRouteOrders AS RO ON RO.RouteID = R.RouteId INNER JOIN
+                                                    tblOrder AS O ON O.OrderId = RO.OrderId INNER JOIN
+                                                    tblOrderItems AS RI ON RI.OrderId = O.OrderId INNER JOIN
+                                                    tblCustomer AS C ON C.CustomerID = O.CutomerId INNER JOIN
+                                                    tblProducts AS P ON P.ProductId = RI.ProductId
+                          WHERE        (RI.Fresh + RI.Frozen &gt; 0) AND (R.RouteId = 4160)) AS A</CommandText>
+    </Query>
+  </DataSet>
+</SharedDataSet>

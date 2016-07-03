@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>SELECT        a.OrderId, a.OrderNo, a.OrderSl, a.OrderDate, a.DeliveryDate AS [Posting Date], a.CutomerId, b.CustomerName, b.Route, CASE WHEN f.ItemSl IS NULL 
+                         THEN b.[RouteCity] ELSE f.[RouteCity] END AS RouteCity, CASE WHEN f.ItemSl IS NULL THEN b.[City] ELSE f.[City] END AS City, a.TotalItems, ISNULL(h.Cs, 0) 
+                         AS [Total Cases], a.OrderAmount, a.CreatedDate, g.UserName AS CreatedBy, a.UpdatedDate, e.UserName AS UpdatedBy, a.Status + CASE WHEN c.ItemId IS NULL 
+                         AND a.[Status] &lt;&gt; 'Delivered' THEN '' ELSE '. On Delivery(' + b.RouteCity + '-' + d .RouteCity + ')' END + CASE WHEN a_temp.OrderId IS NULL 
+                         THEN '' ELSE '. Last order date ' + CONVERT(VARCHAR, a_temp.OrderDate, 101) + ' #' + a_temp.OrderNo END AS Status, d.Driver, d.Truck, 
+                         d.OtherInfos AS [Route Name], a.StatusDate, a.StatusBy, a.Remarks, a.Comments, a.Session, a.BranchId, CASE WHEN f.ItemSl IS NULL 
+                         THEN 'NO' ELSE 'YES' END AS BOL, CASE WHEN f.ItemSl IS NULL THEN '' ELSE f.[DropOffPoint] END AS [Drop Off Point], CASE WHEN ISNULL(f.[Receiving_CutOff], 
+                         CASE WHEN ISNULL(b.[Receiving_CutOff], '') = '' THEN 'NOT SPECIFIED' ELSE b.[Receiving_CutOff] END) 
+                         = '' THEN 'NOT SPECIFIED' ELSE b.[Receiving_CutOff] END AS [Recieving Cut Off]
+FROM            tblOrder AS a LEFT OUTER JOIN
+                         tblOrder AS a_temp ON a.Status = 'No Order' AND a.OrderId &gt; a_temp.OrderId AND a.CutomerId = a_temp.CutomerId AND a_temp.OrderId IN
+                             (SELECT        MAX(OrderId) AS Expr1
+                               FROM            tblOrder
+                               WHERE        (OrderDate &lt; a.OrderDate) AND (CutomerId = a.CutomerId) AND (Status NOT IN ('Cancelled', 'No Order'))
+                               GROUP BY CutomerId) LEFT OUTER JOIN
+                         tblCustomer AS b ON a.CutomerId = b.CustomerID LEFT OUTER JOIN
+                             (SELECT        ItemId, Sl, OrderId, RouteID
+                               FROM            tblRouteOrders
+                               WHERE        (ItemId IN
+                                                             (SELECT        MAX(ItemId) AS Expr1
+                                                               FROM            tblRouteOrders AS tblRouteOrders_1
+                                                               GROUP BY OrderId))) AS c ON a.OrderId = c.OrderId LEFT OUTER JOIN
+                         tblRoute AS d ON c.RouteID = d.RouteId LEFT OUTER JOIN
+                         tblUserDetails AS e ON a.UpdatedBy = e.UserId LEFT OUTER JOIN
+                             (SELECT        ItemSl, CustomerId, DropOffPoint, Address, City, State, Zip, Contact, OrderID, RouteCity, Phone, Fax, Longt, Latt, Receiving_CutOff
+                               FROM            tblCustomer_BOL) AS f ON a.BOLAddressID = f.ItemSl LEFT OUTER JOIN
+                         tblUserDetails AS g ON a.CreatedBy = g.UserId LEFT OUTER JOIN
+                             (SELECT        a.OrderId, SUM(a.Fresh + a.Frozen) AS Cs
+                               FROM            tblOrderItems AS a LEFT OUTER JOIN
+                                                         tblProducts AS b ON a.ProductId = b.ProductId
+                               WHERE        (b.UnitOfMeasure = 'Case(s)')
+                               GROUP BY a.OrderId) AS h ON a.OrderId = h.OrderId
+WHERE        (1 = 1) AND (h.OrderId = 39648)
+ORDER BY a.OrderId</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="OrderId">
+        <DataField>OrderId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="OrderNo">
+        <DataField>OrderNo</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="OrderSl">
+        <DataField>OrderSl</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="OrderDate">
+        <DataField>OrderDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Posting_Date">
+        <DataField>Posting Date</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="CutomerId">
+        <DataField>CutomerId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="CustomerName">
+        <DataField>CustomerName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Route">
+        <DataField>Route</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="RouteCity">
+        <DataField>RouteCity</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="City">
+        <DataField>City</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TotalItems">
+        <DataField>TotalItems</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Total_Cases">
+        <DataField>Total Cases</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="OrderAmount">
+        <DataField>OrderAmount</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="CreatedDate">
+        <DataField>CreatedDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="CreatedBy">
+        <DataField>CreatedBy</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="UpdatedDate">
+        <DataField>UpdatedDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="UpdatedBy">
+        <DataField>UpdatedBy</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Status">
+        <DataField>Status</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Driver">
+        <DataField>Driver</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Truck">
+        <DataField>Truck</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Route_Name">
+        <DataField>Route Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="StatusDate">
+        <DataField>StatusDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="StatusBy">
+        <DataField>StatusBy</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Remarks">
+        <DataField>Remarks</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Comments">
+        <DataField>Comments</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Session">
+        <DataField>Session</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="BranchId">
+        <DataField>BranchId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="BOL">
+        <DataField>BOL</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Drop_Off_Point">
+        <DataField>Drop Off Point</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Recieving_Cut_Off">
+        <DataField>Recieving Cut Off</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

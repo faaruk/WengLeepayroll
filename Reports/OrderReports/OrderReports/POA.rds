@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="POA">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=USER-PC\SQL2014;Initial Catalog=dbWengLee</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>bf0219b6-ba89-4299-9191-d5c8b988cf8c</DataSourceID>
+</RptDataSource>
