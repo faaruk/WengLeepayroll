@@ -113,3 +113,35 @@ E:\Activities\Cindy Tang\WengLeePayroll - MDI\WengLeePayroll\WengLeePayroll\obj\
 E:\Activities\Cindy Tang\WengLeePayroll - MDI\WengLeePayroll\WengLeePayroll\obj\x86\Debug\WengLeePayroll.ManageUser.resources
 E:\Activities\Cindy Tang\WengLeePayroll - MDI\WengLeePayroll\WengLeePayroll\obj\x86\Debug\WengLeePayroll.frmDesignation.resources
 E:\Activities\Cindy Tang\WengLeePayroll - MDI\WengLeePayroll\WengLeePayroll\obj\x86\Debug\WengLeePayroll.frmDepartment.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\bin\Debug\WengLeePayroll.exe.config
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.exe
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.pdb
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\bin\Debug\WengLeePayroll.exe
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\bin\Debug\WengLeePayroll.pdb
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.csprojResolveAssemblyReference.cache
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.ConvertSalariedTemplateToTime.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.ChangePassword.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.ManageUser.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.frmDesignation.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.frmDepartment.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.frmPersonalLeave.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.frmCompanyHolidays.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.Reports.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.Trans.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.Masters.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.MainMdi.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.ManageEmployee.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.SalariedEmpTimeTemplate.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.ExecuteReportLongLunch.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.frmLogin.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.frmPayPeriod.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.SalariedEmpTime.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.ExecuteReportDateRange.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.ExecuteReportFile.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.ExecuteReport.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.Form1.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.Main.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.Properties.Resources.resources
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\WengLeePayroll.csproj.GenerateResource.Cache
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\RdlCompile.cache
+E:\Activities\4. Cindy Tang\WengLeepayrollGit\WengLeePayroll\obj\x86\Debug\RdlCompile.compiled
