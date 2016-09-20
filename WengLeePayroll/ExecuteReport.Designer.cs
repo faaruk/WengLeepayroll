@@ -41,7 +41,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.attendanceBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbSortOption
@@ -49,55 +55,61 @@
             this.cmbSortOption.DisplayMember = "EmpID";
             this.cmbSortOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSortOption.FormattingEnabled = true;
-            this.cmbSortOption.Location = new System.Drawing.Point(449, 12);
+            this.cmbSortOption.Location = new System.Drawing.Point(616, 12);
             this.cmbSortOption.Name = "cmbSortOption";
             this.cmbSortOption.Size = new System.Drawing.Size(89, 21);
             this.cmbSortOption.TabIndex = 18;
+            this.cmbSortOption.SelectedIndexChanged += new System.EventHandler(this.cmbSortOption_SelectedIndexChanged);
+            this.cmbSortOption.Click += new System.EventHandler(this.cmbSortOption_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(258, 12);
+            this.label3.Location = new System.Drawing.Point(429, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 17);
             this.label3.TabIndex = 17;
             this.label3.Text = "Sort By";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // cmbSortBy
             // 
             this.cmbSortBy.DisplayMember = "EmpID";
             this.cmbSortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSortBy.FormattingEnabled = true;
-            this.cmbSortBy.Location = new System.Drawing.Point(326, 12);
+            this.cmbSortBy.Location = new System.Drawing.Point(493, 12);
             this.cmbSortBy.Name = "cmbSortBy";
             this.cmbSortBy.Size = new System.Drawing.Size(118, 21);
             this.cmbSortBy.TabIndex = 16;
+            this.cmbSortBy.Click += new System.EventHandler(this.cmbSortBy_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(587, 12);
+            this.label2.Location = new System.Drawing.Point(754, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 15;
             this.label2.Text = "Page Option";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cmbPrintOption
             // 
             this.cmbPrintOption.DisplayMember = "EmpID";
             this.cmbPrintOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPrintOption.FormattingEnabled = true;
-            this.cmbPrintOption.Location = new System.Drawing.Point(686, 12);
+            this.cmbPrintOption.Location = new System.Drawing.Point(853, 12);
             this.cmbPrintOption.Name = "cmbPrintOption";
             this.cmbPrintOption.Size = new System.Drawing.Size(118, 21);
             this.cmbPrintOption.TabIndex = 14;
+            this.cmbPrintOption.Click += new System.EventHandler(this.cmbPrintOption_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(954, 12);
+            this.button2.Location = new System.Drawing.Point(153, 39);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 23);
             this.button2.TabIndex = 13;
@@ -114,6 +126,7 @@
             this.label1.Size = new System.Drawing.Size(122, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "Select Employee";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // attendanceBindingSource
             // 
@@ -122,7 +135,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(810, 12);
+            this.button1.Location = new System.Drawing.Point(9, 39);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 23);
             this.button1.TabIndex = 11;
@@ -134,24 +147,80 @@
             // 
             this.comboBox1.DisplayMember = "EmpID";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(134, 12);
+            this.comboBox1.Location = new System.Drawing.Point(326, 41);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(118, 21);
+            this.comboBox1.Size = new System.Drawing.Size(285, 21);
             this.comboBox1.TabIndex = 10;
             this.comboBox1.ValueMember = "EmpID";
+            this.comboBox1.Visible = false;
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(9, 39);
+            this.reportViewer1.Location = new System.Drawing.Point(9, 66);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(982, 585);
             this.reportViewer1.TabIndex = 19;
+            this.reportViewer1.Click += new System.EventHandler(this.reportViewer1_Click);
+            this.reportViewer1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.reportViewer1_MouseClick);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(126, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(305, 23);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Click to select";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Location = new System.Drawing.Point(126, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(305, 386);
+            this.panel1.TabIndex = 22;
+            this.panel1.Visible = false;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(302, 20);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(-1, 362);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(305, 23);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "Close";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(0, 20);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBox1.Size = new System.Drawing.Size(305, 342);
+            this.listBox1.TabIndex = 21;
             // 
             // ExecuteReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.cmbSortOption);
             this.Controls.Add(this.label3);
@@ -166,10 +235,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExecuteReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Show Report";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Process Hours";
             this.Load += new System.EventHandler(this.ExecuteReport_Load);
+            this.Click += new System.EventHandler(this.ExecuteReport_Click);
             ((System.ComponentModel.ISupportInitialize)(this.attendanceBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +259,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

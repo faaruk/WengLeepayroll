@@ -336,5 +336,11 @@ namespace WengLeePayroll
                 e.Handled = true;
             }
         }
+
+        private void frmPersonalLeave_Resize(object sender, EventArgs e)
+        {
+            labelGradient2.Width = this.Width;
+            labelGradient2.Left = 0;
+        }
     }
 }

@@ -69,35 +69,15 @@ namespace WengLeePayroll.appcode
                         ExisitingVersion = updateToVersion;
                     }
                 }
-
-                //updateToVersion = 1001;
-                //if ((updateToVersion > ExisitingVersion) && (VersionNumber > ExisitingVersion))
-                //{
-                //    Version1001(updateToVersion);
-                //    ExisitingVersion = updateToVersion;
-                //}
-                //ExisitingVersion = updateToVersion;
-                //updateToVersion = 1002;
-                //if ((updateToVersion > ExisitingVersion) && (VersionNumber > ExisitingVersion))
-                //{
-                //    Version1002(updateToVersion);
-                //    ExisitingVersion = updateToVersion;
-                //}
-                //ExisitingVersion = updateToVersion;
-                //updateToVersion = 1003;
-                //if ((updateToVersion > ExisitingVersion) && (VersionNumber > ExisitingVersion))
-                //{
-                //    Version1003(updateToVersion);
-                //    ExisitingVersion = updateToVersion;
-                //}
-                //ExisitingVersion = updateToVersion;
-                //updateToVersion = 1004;
-                //if ((updateToVersion > ExisitingVersion) && (VersionNumber > ExisitingVersion))
-                //{
-                //    Version1004(updateToVersion);
-                //    ExisitingVersion = updateToVersion;
-                //}
-                
+                updateToVersion = 1005;
+                if ((VersionNumber > ExisitingVersion))
+                {
+                    if (updateToVersion > ExisitingVersion)
+                    {
+                        Version1005(updateToVersion);
+                        ExisitingVersion = updateToVersion;
+                    }
+                }
             }
         }
         private void Version1000(int version)
@@ -323,6 +303,27 @@ namespace WengLeePayroll.appcode
             object objResult = null;
             string strSQL = @"
                 alter table Employees add InsertWhileAttendance bit, InsertDate datetime default getdate(), InsertFromPeriodId int;
+             ";
+
+            SqlDataAdapter adpt = new SqlDataAdapter(strSQL, con);
+            SqlCommand dbCommand = adpt.SelectCommand;
+            dbCommand.CommandText = strSQL;
+            dbCommand.CommandType = CommandType.Text;
+            objResult = dbCommand.ExecuteScalar();
+
+            dbCommand.Dispose();
+            con.Close();
+            con.Dispose();
+            UpdateVersion(version);
+        }
+        private void Version1005(int version)
+        {
+            SqlConnection con = new SqlConnection(conString);
+            con.Open();
+
+            object objResult = null;
+            string strSQL = @"
+                UPDATE Employees set JOBSTATUS='ACTIVE', JobStatusId=1 WHERE InsertFromPeriodId IS NOT NULL;
              ";
 
             SqlDataAdapter adpt = new SqlDataAdapter(strSQL, con);

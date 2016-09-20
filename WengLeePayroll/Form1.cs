@@ -441,5 +441,23 @@ namespace WengLeePayroll
         {
             panel1.Visible = false;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveData objSD = new SaveData();
+                objSD.CreatePayPeriod();
+                mfillCombo();
+                MessageBox.Show("One Pay Period has been created successfully.");
+            }
+            catch (Exception exp) { MessageBox.Show(exp.ToString()); }
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            labelGradient2.Width = this.Width;
+            labelGradient2.Left = 0;
+        }
     }
 }

@@ -136,7 +136,7 @@
             this.labelGradient2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.labelGradient2.Size = new System.Drawing.Size(699, 57);
             this.labelGradient2.TabIndex = 36;
-            this.labelGradient2.Text = "Salaried Time";
+            this.labelGradient2.Text = "Salaried Hours";
             this.labelGradient2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ConvertSalariedTemplateToTime
@@ -159,6 +159,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.SalariedEmpTime_Load);
+            this.Resize += new System.EventHandler(this.ConvertSalariedTemplateToTime_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);

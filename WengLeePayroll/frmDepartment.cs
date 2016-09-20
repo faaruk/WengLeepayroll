@@ -134,5 +134,11 @@ namespace WengLeePayroll
             }
             PayId = "";
         }
+
+        private void frmDepartment_Resize(object sender, EventArgs e)
+        {
+            labelGradient2.Width = this.Width;
+            labelGradient2.Left = 0;
+        }
     }
 }

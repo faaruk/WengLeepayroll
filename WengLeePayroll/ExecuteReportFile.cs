@@ -14,6 +14,7 @@ namespace WengLeePayroll
 {
     public partial class ExecuteReportFile : Form
     {
+        DataTable dtGlobal = new DataTable();
         public ExecuteReportFile()
         {
             InitializeComponent();
@@ -26,6 +27,12 @@ namespace WengLeePayroll
             mfillPayDay();
             this.reportViewer1.Width = this.Width - 30;
             this.reportViewer1.Height = this.Height - 40;
+            System.Drawing.Printing.PageSettings ps = new System.Drawing.Printing.PageSettings();
+            ps.Landscape = false;
+            ps.PaperSize = new System.Drawing.Printing.PaperSize("A4", 827, 1170);
+            ps.PaperSize.RawKind = (int)System.Drawing.Printing.PaperKind.A4;
+            reportViewer1.SetPageSettings(ps);
+            
         }
 
       
@@ -44,9 +51,17 @@ namespace WengLeePayroll
             {
                 ReadData objRD = new ReadData();
                 DataTable dt = objRD.GetEmployeeListArchieve();
+                dtGlobal = dt;
                 comboBox1.DisplayMember = "EmpName";
                 comboBox1.ValueMember = "EmpID";
                 comboBox1.DataSource = dt;
+
+                comboBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
+                comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+                listBox1.DisplayMember = "EmpName";
+                listBox1.ValueMember = "EmpID";
+                listBox1.DataSource = dt;
             }
             catch (Exception ex)
             {
@@ -105,11 +120,27 @@ namespace WengLeePayroll
         {
             try
             {
-                string strEmpID = "0";
-                if (comboBox1.SelectedValue != null)
+                panel1.Visible = false;
+                string tmpStr = "";
+                string sValue = "";
+                foreach (object element in listBox1.SelectedItems)
                 {
-                    strEmpID = comboBox1.SelectedValue.ToString();
+                    DataRowView row = (DataRowView)element;
+                    DataRow rowx = ((DataRowView)row).Row;
+                    sValue = rowx[0].ToString();
+                    tmpStr += sValue + ",";
+
                 }
+                if (tmpStr.Length > 0)
+                {
+                    tmpStr = tmpStr.Remove(tmpStr.Length - 1);
+                }
+                string strEmpID = tmpStr;// "0";
+                //string strEmpID = "0";
+                //if (comboBox1.SelectedValue != null)
+                //{
+                //    strEmpID = comboBox1.SelectedValue.ToString();
+                //}
                 string strPeriodID = "0";
                 if (cmbPayDay.SelectedValue != null)
                 {
@@ -125,6 +156,13 @@ namespace WengLeePayroll
                 this.reportViewer1.ZoomPercent = 100;
                 this.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
                 //this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+
+                //System.Drawing.Printing.PageSettings ps = new System.Drawing.Printing.PageSettings();
+                //ps.Landscape = true;
+                //ps.PaperSize = new System.Drawing.Printing.PaperSize("A4", 827, 1170);
+                //ps.PaperSize.RawKind = (int)System.Drawing.Printing.PaperKind.A4;
+                //reportViewer1.SetPageSettings(ps);
+
                 this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
                 this.reportViewer1.ZoomPercent = 100;
                 this.reportViewer1.Width = this.Width - 30;
@@ -175,11 +213,27 @@ namespace WengLeePayroll
         {
             try
             {
-                string strEmpID = "0";
-                if (comboBox1.SelectedValue != null)
+                panel1.Visible = false;
+                string tmpStr = "";
+                string sValue = "";
+                foreach (object element in listBox1.SelectedItems)
                 {
-                    strEmpID = comboBox1.SelectedValue.ToString();
+                    DataRowView row = (DataRowView)element;
+                    DataRow rowx = ((DataRowView)row).Row;
+                    sValue = rowx[0].ToString();
+                    tmpStr += sValue + ",";
+
                 }
+                if (tmpStr.Length > 0)
+                {
+                    tmpStr = tmpStr.Remove(tmpStr.Length - 1);
+                }
+                string strEmpID = tmpStr;// "0";
+                //string strEmpID = "0";
+                //if (comboBox1.SelectedValue != null)
+                //{
+                //    strEmpID = comboBox1.SelectedValue.ToString();
+                //}
                 string strPeriodID = "0";
                 if (cmbPayDay.SelectedValue != null)
                 {
@@ -223,11 +277,27 @@ namespace WengLeePayroll
         {
             try
             {
-                string strEmpID = "0";
-                if (comboBox1.SelectedValue != null)
+                panel1.Visible = false;
+                string tmpStr = "";
+                string sValue = "";
+                foreach (object element in listBox1.SelectedItems)
                 {
-                    strEmpID = comboBox1.SelectedValue.ToString();
+                    DataRowView row = (DataRowView)element;
+                    DataRow rowx = ((DataRowView)row).Row;
+                    sValue = rowx[0].ToString();
+                    tmpStr += sValue + ",";
+
                 }
+                if (tmpStr.Length > 0)
+                {
+                    tmpStr = tmpStr.Remove(tmpStr.Length - 1);
+                }
+                string strEmpID = tmpStr;// "0";
+                //string strEmpID = "0";
+                //if (comboBox1.SelectedValue != null)
+                //{
+                //    strEmpID = comboBox1.SelectedValue.ToString();
+                //}
                 string strPeriodID = "0";
                 if (cmbPayDay.SelectedValue != null)
                 {
@@ -271,11 +341,27 @@ namespace WengLeePayroll
         {
             try
             {
-                string strEmpID = "0";
-                if (comboBox1.SelectedValue != null)
+                panel1.Visible = false;
+                string tmpStr = "";
+                string sValue = "";
+                foreach (object element in listBox1.SelectedItems)
                 {
-                    strEmpID = comboBox1.SelectedValue.ToString();
+                    DataRowView row = (DataRowView)element;
+                    DataRow rowx = ((DataRowView)row).Row;
+                    sValue = rowx[0].ToString();
+                    tmpStr += sValue + ",";
+
                 }
+                if (tmpStr.Length > 0)
+                {
+                    tmpStr = tmpStr.Remove(tmpStr.Length - 1);
+                }
+                string strEmpID = tmpStr;// "0";
+                //string strEmpID = "0";
+                //if (comboBox1.SelectedValue != null)
+                //{
+                //    strEmpID = comboBox1.SelectedValue.ToString();
+                //}
                 string strPeriodID = "0";
                 if (cmbPayDay.SelectedValue != null)
                 {
@@ -318,11 +404,27 @@ namespace WengLeePayroll
         {
             try
             {
-                string strEmpID = "0";
-                if (comboBox1.SelectedValue != null)
+                panel1.Visible = false;
+                string tmpStr = "";
+                string sValue = "";
+                foreach (object element in listBox1.SelectedItems)
                 {
-                    strEmpID = comboBox1.SelectedValue.ToString();
+                    DataRowView row = (DataRowView)element;
+                    DataRow rowx = ((DataRowView)row).Row;
+                    sValue = rowx[0].ToString();
+                    tmpStr += sValue + ",";
+
                 }
+                if (tmpStr.Length > 0)
+                {
+                    tmpStr = tmpStr.Remove(tmpStr.Length - 1);
+                }
+                string strEmpID = tmpStr;// "0";
+                //string strEmpID = "0";
+                //if (comboBox1.SelectedValue != null)
+                //{
+                //    strEmpID = comboBox1.SelectedValue.ToString();
+                //}
                 string strPeriodID = "0";
                 if (cmbPayDay.SelectedValue != null)
                 {
@@ -377,11 +479,27 @@ namespace WengLeePayroll
         {
             try
             {
-                string strEmpID = "0";
-                if (comboBox1.SelectedValue != null)
+                panel1.Visible = false;
+                string tmpStr = "";
+                string sValue = "";
+                foreach (object element in listBox1.SelectedItems)
                 {
-                    strEmpID = comboBox1.SelectedValue.ToString();
+                    DataRowView row = (DataRowView)element;
+                    DataRow rowx = ((DataRowView)row).Row;
+                    sValue = rowx[0].ToString();
+                    tmpStr += sValue + ",";
+
                 }
+                if (tmpStr.Length > 0)
+                {
+                    tmpStr = tmpStr.Remove(tmpStr.Length - 1);
+                }
+                string strEmpID = tmpStr;// "0";
+                //string strEmpID = "0";
+                //if (comboBox1.SelectedValue != null)
+                //{
+                //    strEmpID = comboBox1.SelectedValue.ToString();
+                //}
                 string strPeriodID = "0";
                 if (cmbPayDay.SelectedValue != null)
                 {
@@ -429,11 +547,27 @@ namespace WengLeePayroll
         {
             try
             {
-                string strEmpID = "0";
-                if (comboBox1.SelectedValue != null)
+                panel1.Visible = false;
+                string tmpStr = "";
+                string sValue = "";
+                foreach (object element in listBox1.SelectedItems)
                 {
-                    strEmpID = comboBox1.SelectedValue.ToString();
+                    DataRowView row = (DataRowView)element;
+                    DataRow rowx = ((DataRowView)row).Row;
+                    sValue = rowx[0].ToString();
+                    tmpStr += sValue + ",";
+
                 }
+                if (tmpStr.Length > 0)
+                {
+                    tmpStr = tmpStr.Remove(tmpStr.Length - 1);
+                }
+                string strEmpID = tmpStr;// "0";
+                //string strEmpID = "0";
+                //if (comboBox1.SelectedValue != null)
+                //{
+                //    strEmpID = comboBox1.SelectedValue.ToString();
+                //}
                 string strPeriodID = "0";
                 if (cmbPayDay.SelectedValue != null)
                 {
@@ -470,6 +604,104 @@ namespace WengLeePayroll
             {
                 MessageBox.Show("Error occured! Please contact system admin.");
             }
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            comboBox1.DroppedDown = false;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            textBox1.Focus();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            string tmpStr = "";
+            string sValue = "";
+            foreach (object element in listBox1.SelectedItems)
+            {
+                DataRowView row = (DataRowView)element;
+                DataRow rowx = ((DataRowView)row).Row;
+                sValue = rowx[0].ToString();
+                tmpStr += sValue + ",";
+
+            }
+            if (tmpStr.Length > 0)
+            {
+                tmpStr = tmpStr.Remove(tmpStr.Length - 1);
+            }
+
+            if (tmpStr != "0")
+            {
+                button10.Text = tmpStr;
+            }
+            else { button10.Text = "All"; }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DataRow[] drArr = dtGlobal.Select("EmpName like '%" + textBox1.Text + "%'");
+
+            DataTable dtNew = new DataTable();
+            dtNew.Columns.Add("EmpID", typeof(System.Int32));
+            dtNew.Columns.Add("EmpName", typeof(System.String));
+            for (int i = 0; i < drArr.Length; i++)
+                dtNew.Rows.Add(drArr[i].ItemArray);
+            listBox1.DataSource = dtNew;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void cmbPayDay_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void cmbSortBy_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void cmbSortOption_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void cmbPrintOption_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void ExecuteReportFile_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void reportViewer1_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
         }
     }
 

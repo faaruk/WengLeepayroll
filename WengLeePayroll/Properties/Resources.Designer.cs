@@ -83,6 +83,16 @@ namespace WengLeePayroll.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap inside_background {
+            get {
+                object obj = ResourceManager.GetObject("inside-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap integrating_time_attendance_payroll {
             get {
                 object obj = ResourceManager.GetObject("integrating-time-attendance-payroll", resourceCulture);

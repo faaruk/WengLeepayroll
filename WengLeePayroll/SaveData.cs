@@ -68,6 +68,26 @@ namespace WengLeePayroll
             dbCommand.Dispose();
             adpt.Dispose();
         }
+        public void CreatePayPeriod()
+        {
+
+            string strSQL = @"INSERT INTO PayPeriod(PayDate, PeriodFrom, PeriodTo, Status, Comments)
+            select DATEADD(day, 14, max(PayDate)) PayDate, DATEADD(day, 14, max(PeriodFrom)) PeriodFrom, dateadd(day, 14, max(PeriodTo)) PeriodTo, 1, 'Auto Created' from PayPeriod;
+                                ";
+            SqlConnection con = new SqlConnection(conString);
+            con.Open();
+            SqlDataAdapter adpt = new SqlDataAdapter(strSQL, con);
+            object objResult = null;
+
+            SqlCommand dbCommand = adpt.SelectCommand;
+            dbCommand.CommandText = strSQL;
+            dbCommand.CommandType = CommandType.Text;
+
+            objResult = dbCommand.ExecuteScalar();
+            con.Dispose();
+            dbCommand.Dispose();
+            adpt.Dispose();
+        }
         public DataTable ImportEmpFromAttendanceSheetIfNew()
         {
 
@@ -80,8 +100,8 @@ namespace WengLeePayroll
                 );
 
 
-                insert into Employees(TLOID, NAME, FirstName, LastName, InsertWhileAttendance, InsertFromPeriodId) 
-                select distinct EmpID, EmpName, SUBSTRING(EmpName, 1, CHARINDEX(', ', EmpName) - 1), SUBSTRING(EmpName, CHARINDEX(', ', EmpName) + 1, 8000), 1, PeriodId
+                insert into Employees(TLOID, NAME, FirstName, LastName, InsertWhileAttendance, InsertFromPeriodId, JobStatusId) 
+                select distinct EmpID, EmpName, SUBSTRING(EmpName, 1, CHARINDEX(', ', EmpName) - 1), SUBSTRING(EmpName, CHARINDEX(', ', EmpName) + 1, 8000), 1, PeriodId, 1
                 from Attendance
                 where EmpID not in(
 	                select TLOID from Employees

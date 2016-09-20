@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>478292_668dc7c1d6f84426864a7d66a1154ba3_9WZ_6.ico</ApplicationIcon>
+    <ApplicationIcon>1472059843_emblem-people.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -350,8 +350,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1472059843_emblem-people.ico" />
     <Content Include="478292_668dc7c1d6f84426864a7d66a1154ba3_9WZ_6.ico" />
     <Content Include="58bd82c2_b384_488f_b7cd_c2c978e0ecec_aH1_12.ico" />
+    <None Include="Resources\inside-background.jpg" />
     <None Include="Resources\7167847_ml.jpg" />
     <None Include="Resources\integrating-time-attendance-payroll.jpg" />
     <None Include="Resources\58bd82c2-b384-488f-b7cd-c2c978e0ecec.jpg" />

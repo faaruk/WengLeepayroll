@@ -21,12 +21,19 @@ namespace WengLeePayroll
         }
         protected override void OnPaintBackground(PaintEventArgs e)
         {
+            try
+            {
             using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle,
                                                                        Color.Silver,
                                                                        Color.Tan,
                                                                        90F))
             {
                 e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
+            }
+            catch (Exception ex)
+            {
+                
             }
         }
         private void SalariedEmpTime_Load(object sender, EventArgs e)
@@ -57,12 +64,6 @@ namespace WengLeePayroll
             dataGridView1.DataSource = dt;
             //dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dataGridView1.Columns[0].Visible = false;
-            //dataGridView1.Columns[1].Width = 60;
-            //dataGridView1.Columns[2].Width = 165;
-            //dataGridView1.Columns[3].Width = 50;
-            //dataGridView1.Columns[4].Width = 50;
-            //dataGridView1.Columns[5].Width = 50;
-
         }
         private void mfillCombo()
         {
@@ -343,9 +344,10 @@ namespace WengLeePayroll
             dataGridView1.Width = this.Width - 20;
             dataGridView1.Height = this.Height - 465;
             labelGradient1.Width = this.Width + 10;
-            buttonLastest4.Top =dataGridView1.Top+ dataGridView1.Height + 2;
-            cmdDelete.Top = dataGridView1.Top + dataGridView1.Height + 2;
-            panel1.Top = dataGridView1.Top + dataGridView1.Height + 2;
+            labelGradient1.Left = 0;
+            //buttonLastest4.Top =dataGridView1.Top+ dataGridView1.Height + 2;
+            //cmdDelete.Top = dataGridView1.Top + dataGridView1.Height + 2;
+            //panel1.Top = dataGridView1.Top + dataGridView1.Height + 2;
             this.Invalidate();
         }
 

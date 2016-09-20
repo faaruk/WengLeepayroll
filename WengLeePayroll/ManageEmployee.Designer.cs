@@ -69,9 +69,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new WengLeePayroll.ButtonLastest();
-            this.labelGradient1 = new WengLeePayroll.LabelGradient();
-            this.cmdDelete = new WengLeePayroll.ButtonLastest();
-            this.buttonLastest4 = new WengLeePayroll.ButtonLastest();
             this.label19 = new System.Windows.Forms.Label();
             this.cmbHealthInsurance = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -86,6 +83,9 @@
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbSearchInStatus = new System.Windows.Forms.ComboBox();
+            this.labelGradient1 = new WengLeePayroll.LabelGradient();
+            this.cmdDelete = new WengLeePayroll.ButtonLastest();
+            this.buttonLastest4 = new WengLeePayroll.ButtonLastest();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -480,7 +480,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Location = new System.Drawing.Point(12, 669);
+            this.panel1.Location = new System.Drawing.Point(27, 254);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(115, 49);
             this.panel1.TabIndex = 58;
@@ -502,57 +502,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
-            // 
-            // labelGradient1
-            // 
-            this.labelGradient1.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedOuter;
-            this.labelGradient1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGradient1.ForeColor = System.Drawing.Color.White;
-            this.labelGradient1.GradientColorTwo = System.Drawing.Color.Black;
-            this.labelGradient1.Location = new System.Drawing.Point(0, 0);
-            this.labelGradient1.Name = "labelGradient1";
-            this.labelGradient1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.labelGradient1.Size = new System.Drawing.Size(1350, 57);
-            this.labelGradient1.TabIndex = 28;
-            this.labelGradient1.Text = "Employee List";
-            this.labelGradient1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmdDelete
-            // 
-            this.cmdDelete.BackColor = System.Drawing.Color.White;
-            this.cmdDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.cmdDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.cmdDelete.FlatAppearance.BorderSize = 5;
-            this.cmdDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.cmdDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.cmdDelete.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmdDelete.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.cmdDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(33)))), ((int)(((byte)(107)))));
-            this.cmdDelete.Location = new System.Drawing.Point(242, 673);
-            this.cmdDelete.Name = "cmdDelete";
-            this.cmdDelete.Size = new System.Drawing.Size(108, 40);
-            this.cmdDelete.TabIndex = 18;
-            this.cmdDelete.Text = "Delete";
-            this.cmdDelete.UseVisualStyleBackColor = false;
-            this.cmdDelete.Click += new System.EventHandler(this.buttonLastest5_Click);
-            // 
-            // buttonLastest4
-            // 
-            this.buttonLastest4.BackColor = System.Drawing.Color.White;
-            this.buttonLastest4.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.buttonLastest4.FlatAppearance.BorderSize = 5;
-            this.buttonLastest4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.buttonLastest4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonLastest4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonLastest4.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.buttonLastest4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(33)))), ((int)(((byte)(107)))));
-            this.buttonLastest4.Location = new System.Drawing.Point(128, 673);
-            this.buttonLastest4.Name = "buttonLastest4";
-            this.buttonLastest4.Size = new System.Drawing.Size(108, 40);
-            this.buttonLastest4.TabIndex = 17;
-            this.buttonLastest4.Text = "Edit";
-            this.buttonLastest4.UseVisualStyleBackColor = false;
-            this.buttonLastest4.Click += new System.EventHandler(this.buttonLastest4_Click);
             // 
             // label19
             // 
@@ -685,6 +634,57 @@
             this.cmbSearchInStatus.Size = new System.Drawing.Size(100, 27);
             this.cmbSearchInStatus.TabIndex = 56;
             this.cmbSearchInStatus.SelectedIndexChanged += new System.EventHandler(this.cmbSearchInStatus_SelectedIndexChanged);
+            // 
+            // labelGradient1
+            // 
+            this.labelGradient1.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedOuter;
+            this.labelGradient1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradient1.ForeColor = System.Drawing.Color.White;
+            this.labelGradient1.GradientColorTwo = System.Drawing.Color.Black;
+            this.labelGradient1.Location = new System.Drawing.Point(0, 0);
+            this.labelGradient1.Name = "labelGradient1";
+            this.labelGradient1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelGradient1.Size = new System.Drawing.Size(1350, 57);
+            this.labelGradient1.TabIndex = 28;
+            this.labelGradient1.Text = "Employee List";
+            this.labelGradient1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmdDelete
+            // 
+            this.cmdDelete.BackColor = System.Drawing.Color.White;
+            this.cmdDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cmdDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.cmdDelete.FlatAppearance.BorderSize = 5;
+            this.cmdDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.cmdDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.cmdDelete.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmdDelete.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.cmdDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(33)))), ((int)(((byte)(107)))));
+            this.cmdDelete.Location = new System.Drawing.Point(257, 262);
+            this.cmdDelete.Name = "cmdDelete";
+            this.cmdDelete.Size = new System.Drawing.Size(108, 40);
+            this.cmdDelete.TabIndex = 18;
+            this.cmdDelete.Text = "Delete";
+            this.cmdDelete.UseVisualStyleBackColor = false;
+            this.cmdDelete.Click += new System.EventHandler(this.buttonLastest5_Click);
+            // 
+            // buttonLastest4
+            // 
+            this.buttonLastest4.BackColor = System.Drawing.Color.White;
+            this.buttonLastest4.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.buttonLastest4.FlatAppearance.BorderSize = 5;
+            this.buttonLastest4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.buttonLastest4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonLastest4.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonLastest4.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.buttonLastest4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(33)))), ((int)(((byte)(107)))));
+            this.buttonLastest4.Location = new System.Drawing.Point(143, 262);
+            this.buttonLastest4.Name = "buttonLastest4";
+            this.buttonLastest4.Size = new System.Drawing.Size(108, 40);
+            this.buttonLastest4.TabIndex = 17;
+            this.buttonLastest4.Text = "Edit";
+            this.buttonLastest4.UseVisualStyleBackColor = false;
+            this.buttonLastest4.Click += new System.EventHandler(this.buttonLastest4_Click);
             // 
             // ManageEmployee
             // 

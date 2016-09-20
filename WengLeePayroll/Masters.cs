@@ -65,7 +65,7 @@ namespace WengLeePayroll
         private void cmdPayPeriod_Click(object sender, EventArgs e)
         {
             var frmForm1 = new frmPayPeriod { MdiParent = this.MdiParent };
-
+            //frmForm1.WindowState = FormWindowState.Maximized;
             //MainMdi frm = this.MdiParent as MainMdi;
 
             //frmForm1.MdiParent = frm;

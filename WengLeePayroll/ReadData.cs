@@ -32,7 +32,7 @@ namespace WengLeePayroll
                 where EmpTableAutoID>0 ";
             if (_EmpID != "0")
             {
-                strSQL += "AND empid=" + _EmpID + " ";
+                strSQL += "AND empid in (" + _EmpID + ") ";
 
             }
             else
@@ -94,7 +94,7 @@ namespace WengLeePayroll
                 Code, attDate, attDay, Action, Start, Stop, Hours, Reg, OT1, OT2, Paid, Unpaid, DefaultLevel, EmpName, DefaultLevelValue,
                 SUBSTRING(EmpName, 1, CHARINDEX(', ', EmpName) - 1) AS FirstName,
                 SUBSTRING(EmpName, CHARINDEX(', ', EmpName) + 1, 8000) AS LastName,
-                (SELECT COUNT(EMPID) FROM dbo.Attendance_Archive B WHERE B.EMPID=A.EMPID) RCNT,
+                (SELECT COUNT(EMPID) FROM dbo.Attendance_Archive B WHERE B.EMPID=A.EMPID AND B.PeriodId =A.PeriodId) RCNT,
                 convert(varchar(10), ProcessDate, 101) ProcessDate, [FileName],P.PeriodId,
                 isnull(convert(varchar(12),PeriodFrom, 107),'') + ' - '+ isnull(convert(varchar(12),PeriodTo, 107),'') Period
                 FROM         dbo.Attendance_Archive A 
@@ -106,16 +106,16 @@ namespace WengLeePayroll
             }
             if (_EmpID != "0")
             {
-                strSQL += "AND empid=" + _EmpID + " ";
+                strSQL += "AND empid in (" + _EmpID + ") ";
 
             }
             else
             {
                 if (_PageOption == "1")
-                { strSQL += "AND RCNT<=34 "; }
+                { strSQL += "AND RCNT<=38 "; }
 
                 if (_PageOption == "2")
-                { strSQL += "AND RCNT>34 "; }
+                { strSQL += "AND RCNT>38 "; }
 
                 if (_SortBy == "0")
                 {
@@ -176,36 +176,36 @@ namespace WengLeePayroll
 
             if (_EmpID != "0")
             {
-                strSQL += "AND empid=" + _EmpID + " ";
+                strSQL += "AND empid in (" + _EmpID + ") ";
                 strSQL += "order by attendenceDate, EmpTableAutoID";
             }
             else
             {
                 if (_SortBy == "0")
                 {
-                    strSQL += "ORDER BY EmpId, EmpName ";
+                    strSQL += "ORDER BY attendenceDate, EmpTableAutoID, EmpId, EmpName ";
                 }
                 else if (_SortBy == "1")
                 {
-                    strSQL += "ORDER BY EmpId ";
+                    strSQL += "ORDER BY attendenceDate, EmpTableAutoID, EmpId ";
                 }
                 else if (_SortBy == "2")
                 {
-                    strSQL += "ORDER BY EmpName ";
+                    strSQL += "ORDER BY attendenceDate, EmpTableAutoID, EmpName ";
                 }
                 else if (_SortBy == "3")
                 {
-                    strSQL += "ORDER BY FirstName ";
+                    strSQL += "ORDER BY attendenceDate, EmpTableAutoID, FirstName ";
                 }
                 else if (_SortBy == "4")
                 {
-                    strSQL += "ORDER BY LastName ";
+                    strSQL += "ORDER BY attendenceDate, EmpTableAutoID, LastName ";
                 }
                 if (_SortOption == "1")
                 {
                     strSQL += "Desc; ";
                 }
-                strSQL += ", attendenceDate, EmpTableAutoID";
+               // strSQL += ", attendenceDate, EmpTableAutoID";
             }
 
             SqlConnection con = new SqlConnection(conString);
@@ -241,7 +241,7 @@ namespace WengLeePayroll
                 where EmpID<>'' ";
             if (_EmpID != "0")
             {
-                strSQL += "AND empid=" + _EmpID + " ";
+                strSQL += "AND empid in (" + _EmpID + ") ";
 
             }
             else
@@ -437,7 +437,7 @@ namespace WengLeePayroll
 
             if (_EmpID != "0")
             {
-                strSQL += "AND empid=" + _EmpID + " ";
+                strSQL += "AND empid in (" + _EmpID + ") ";
                 strSQL += "order by attendenceDate Asc";
 
             }
@@ -509,7 +509,7 @@ namespace WengLeePayroll
 
             if (_EmpID != "0")
             {
-                strSQL += "AND empid=" + _EmpID + " ";
+                strSQL += "AND empid in (" + _EmpID + ") ";
                 strSQL += "order by attendenceDate Asc, convert(datetime,InTime,100)";
             }
             else
@@ -704,7 +704,7 @@ namespace WengLeePayroll
 
             if (_EmpID != "0")
             {
-                strSQL += "where empid=" + _EmpID + " ";
+                strSQL += "where empid in (" + _EmpID + ") ";
                 strSQL += @"GROUP BY EmpID, EmpName, FirstName, LastName ";
             }
             else
@@ -1354,7 +1354,7 @@ namespace WengLeePayroll
 
             if (_EmpID != "0")
             {
-                strSQL += "AND TLOID=" + _EmpID + " ";
+                strSQL += "AND TLOID in (" + _EmpID + ") ";
                 strSQL += "order by LeaveDate Asc";
             }
             else
@@ -1497,7 +1497,7 @@ namespace WengLeePayroll
 
             if (_EmpID != "0")
             {
-                strSQL += "AND empid=" + _EmpID + " ";
+                strSQL += "AND empid in (" + _EmpID + ") ";
                 strSQL += "order by attendenceDate Asc";
 
             }
@@ -1680,7 +1680,7 @@ namespace WengLeePayroll
 
             if (_EmpID != "0")
             {
-                strSQL += "where empid=" + _EmpID + " ";
+                strSQL += "where empid in (" + _EmpID + ") ";
                 strSQL += @"GROUP BY EmpID, EmpName, FirstName, LastName, PeriodId ";
             }
             else
@@ -1716,10 +1716,6 @@ namespace WengLeePayroll
                 }
 
             }
-
-
-
-
 
             SqlConnection con = new SqlConnection(conString);
             con.Open();
@@ -1759,7 +1755,7 @@ namespace WengLeePayroll
 
             if (_EmpID != "0")
             {
-                strSQL += "AND empid=" + _EmpID + " ";
+                strSQL += "AND empid in (" + _EmpID + ") ";
                 strSQL += "order by attendenceDate Asc, convert(datetime,InTime,100)";
             }
             else
@@ -1860,8 +1856,8 @@ namespace WengLeePayroll
 
             if (_EmpID != "0")
             {
-                strSQL += "AND TLOID=" + _EmpID + " ";
-                strSQL += "order by LeaveDate Asc";
+                strSQL += "AND PLId in (" + _EmpID + ") ";
+                strSQL += "order by [From Date] Asc";
             }
             else
             {

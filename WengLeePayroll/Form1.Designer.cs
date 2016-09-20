@@ -42,8 +42,9 @@
             this.buttonLastest1 = new WengLeePayroll.ButtonLastest();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelGradient1 = new WengLeePayroll.LabelGradient();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 102);
+            this.label2.Location = new System.Drawing.Point(7, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 21);
             this.label2.TabIndex = 9;
@@ -122,7 +123,7 @@
             this.cmbPayPeriod.DisplayMember = "EmpID";
             this.cmbPayPeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPayPeriod.FormattingEnabled = true;
-            this.cmbPayPeriod.Location = new System.Drawing.Point(145, 101);
+            this.cmbPayPeriod.Location = new System.Drawing.Point(137, 101);
             this.cmbPayPeriod.Name = "cmbPayPeriod";
             this.cmbPayPeriod.Size = new System.Drawing.Size(230, 21);
             this.cmbPayPeriod.TabIndex = 32;
@@ -157,7 +158,7 @@
             this.labelGradient2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.labelGradient2.Size = new System.Drawing.Size(1120, 57);
             this.labelGradient2.TabIndex = 33;
-            this.labelGradient2.Text = "Import Data";
+            this.labelGradient2.Text = "Import Hours";
             this.labelGradient2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonLastest1
@@ -181,7 +182,7 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.labelGradient1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(198, 124);
+            this.panel1.Location = new System.Drawing.Point(199, 126);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 368);
             this.panel1.TabIndex = 35;
@@ -197,6 +198,21 @@
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // labelGradient1
+            // 
+            this.labelGradient1.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedOuter;
+            this.labelGradient1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradient1.ForeColor = System.Drawing.Color.White;
+            this.labelGradient1.GradientColorOne = System.Drawing.Color.Lime;
+            this.labelGradient1.GradientColorTwo = System.Drawing.Color.Black;
+            this.labelGradient1.Location = new System.Drawing.Point(0, 0);
+            this.labelGradient1.Name = "labelGradient1";
+            this.labelGradient1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelGradient1.Size = new System.Drawing.Size(800, 49);
+            this.labelGradient1.TabIndex = 34;
+            this.labelGradient1.Text = "List of new employee(s) imported";
+            this.labelGradient1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridView1
             // 
@@ -215,26 +231,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(795, 296);
             this.dataGridView1.TabIndex = 20;
             // 
-            // labelGradient1
+            // button3
             // 
-            this.labelGradient1.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedOuter;
-            this.labelGradient1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGradient1.ForeColor = System.Drawing.Color.White;
-            this.labelGradient1.GradientColorOne = System.Drawing.Color.Lime;
-            this.labelGradient1.GradientColorTwo = System.Drawing.Color.Black;
-            this.labelGradient1.Location = new System.Drawing.Point(0, 0);
-            this.labelGradient1.Name = "labelGradient1";
-            this.labelGradient1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.labelGradient1.Size = new System.Drawing.Size(800, 49);
-            this.labelGradient1.TabIndex = 34;
-            this.labelGradient1.Text = "List of new employee(s) imported";
-            this.labelGradient1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(368, 100);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(25, 25);
+            this.button3.TabIndex = 36;
+            this.button3.Text = "+";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 601);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonLastest5);
             this.Controls.Add(this.labelGradient2);
@@ -255,6 +268,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load_1);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -279,5 +293,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private LabelGradient labelGradient1;
+        private System.Windows.Forms.Button button3;
     }
 }

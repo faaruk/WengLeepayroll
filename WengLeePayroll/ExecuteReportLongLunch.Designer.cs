@@ -55,7 +55,7 @@
             this.cmbSortOption.DisplayMember = "EmpID";
             this.cmbSortOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSortOption.FormattingEnabled = true;
-            this.cmbSortOption.Location = new System.Drawing.Point(817, 11);
+            this.cmbSortOption.Location = new System.Drawing.Point(968, 11);
             this.cmbSortOption.Name = "cmbSortOption";
             this.cmbSortOption.Size = new System.Drawing.Size(89, 21);
             this.cmbSortOption.TabIndex = 18;
@@ -64,7 +64,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(626, 13);
+            this.label3.Location = new System.Drawing.Point(777, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 17);
             this.label3.TabIndex = 17;
@@ -75,7 +75,7 @@
             this.cmbSortBy.DisplayMember = "EmpID";
             this.cmbSortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSortBy.FormattingEnabled = true;
-            this.cmbSortBy.Location = new System.Drawing.Point(694, 11);
+            this.cmbSortBy.Location = new System.Drawing.Point(845, 11);
             this.cmbSortBy.Name = "cmbSortBy";
             this.cmbSortBy.Size = new System.Drawing.Size(118, 21);
             this.cmbSortBy.TabIndex = 16;
@@ -126,7 +126,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(912, 10);
+            this.button1.Location = new System.Drawing.Point(11, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 23);
             this.button1.TabIndex = 11;
@@ -140,13 +140,13 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(502, 11);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(118, 21);
+            this.comboBox1.Size = new System.Drawing.Size(269, 21);
             this.comboBox1.TabIndex = 10;
             this.comboBox1.ValueMember = "EmpID";
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(9, 39);
+            this.reportViewer1.Location = new System.Drawing.Point(9, 65);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(982, 585);
             this.reportViewer1.TabIndex = 19;
@@ -183,7 +183,7 @@
             this.label5.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(203, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 17);
+            this.label5.Size = new System.Drawing.Size(68, 17);
             this.label5.TabIndex = 23;
             this.label5.Text = "To Date:";
             // 
@@ -194,7 +194,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1037, 10);
+            this.button3.Location = new System.Drawing.Point(136, 36);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(98, 23);
             this.button3.TabIndex = 24;
@@ -205,7 +205,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(1135, 10);
+            this.button4.Location = new System.Drawing.Point(234, 36);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(140, 23);
             this.button4.TabIndex = 25;
