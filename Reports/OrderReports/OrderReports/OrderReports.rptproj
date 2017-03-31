@@ -15,8 +15,16 @@
   </DataSets>
   <Reports>
     <ProjectItem>
+      <Name>OrdersCreatedAfterRoute.rdl</Name>
+      <FullPath>OrdersCreatedAfterRoute.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>OrdersCreatedAfterRoute.rdlc</Name>
       <FullPath>OrdersCreatedAfterRoute.rdlc</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>OrdersEditLog.rdl</Name>
+      <FullPath>OrdersEditLog.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>RouteReport.rdl</Name>
@@ -35,8 +43,8 @@
       <FullPath>StopageReport.rdlc</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>OrdersCreatedAfterRoute.rdl</Name>
-      <FullPath>OrdersCreatedAfterRoute.rdl</FullPath>
+      <Name>OrdersEditLog.rdlc</Name>
+      <FullPath>OrdersEditLog.rdlc</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
